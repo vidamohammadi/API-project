@@ -2,8 +2,13 @@ import React from 'react'
 import './Input.css'
 
 const Input = (props) => {
+    if(props.name === "input"){
+        return(
+            <input className="input" type="text" value={props.value} onChange={props.onChange} />
+        )
+    }
     return (
-        <input className="input" value={props.value} type={props.type}/>
+        <textarea className="textarea" rows="4" value={props.value} onChange={props.onChange} />
     )
 }
 
