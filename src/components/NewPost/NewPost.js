@@ -1,16 +1,19 @@
 import React from 'react'
 import './NewPost.css'
+import Button from '../UI/Button/Button'
+import Input from '../UI/Input/Input'
+
 const NewPost = () => {
     return (
         <div className="newPost">
                 <h1>Add a Post</h1>
                 <label>Title</label>
-                <input />
+                <Input type="input"/>
                 <label>Content</label>
-                <textarea />
+                <Input type="texteara"/>
                 <label>Auther</label>
-                <input />
-                <button>Add Post</button>
+                <Input type="input"/>
+                <Button value="Add Post"/>
         </div>
     )
 }
