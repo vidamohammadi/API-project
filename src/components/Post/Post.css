@@ -7,3 +7,12 @@
     height: 260px;
     width: 260px;
 }
+
+.post h2{
+    height: 200px;
+    
+}
+
+.post p {
+    font-size: 8pt;
+}

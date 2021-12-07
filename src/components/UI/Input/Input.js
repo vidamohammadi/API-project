@@ -8,7 +8,7 @@ const Input = (props) => {
         )
     }
     return (
-        <textarea className="textarea" rows="4" value={props.value} onChange={props.onChange} />
+        <textarea className="input" style={{height: "150px"}} rows="4" value={props.value} onChange={props.onChange} />
     )
 }
 

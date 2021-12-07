@@ -1,17 +1,9 @@
 .input{
     border: none;
-    box-shadow: -1px 6px 8px yellowgreen;
     height: 50px;
     width: 500px;
     margin-bottom: 25px;
     margin-top: 15px;
-}
-
-.textarea{
-    border: none;
-    box-shadow: -1px 6px 8px yellowgreen;
-    height: 150px;
-    width: 500px;
-    margin-bottom: 25px;
-    margin-top: 15px;
+    border: 1px solid darkgreen;
+    border-radius: 10px;
 }
