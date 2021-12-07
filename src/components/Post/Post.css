@@ -1,0 +1,9 @@
+.post{
+    margin: 20px;
+    border: 1px solid darkgreen;
+    padding: 10px;
+    background: rgba(144, 238, 144, 0.322);
+    border-radius: 10px;
+    height: 260px;
+    width: 260px;
+}

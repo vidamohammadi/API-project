@@ -1,21 +1,23 @@
 import React from 'react'
+import './Blog.css'
 import Post from '../../components/Post/Post'
 import NewPost from '../../components/NewPost/NewPost'
 import FullPost from '../../components/FullPost/FullPost'
 
 const Blog = () => {
     return (
-        <React.Fragment>
-            <div>
+        <div>
+            <div className="center">
+                <Post />
                 <Post />
             </div>
-            <div>
+            <div className="center">
                 <FullPost />
             </div>
-            <div>
+            <div className="center">
                 <NewPost />
             </div>
-        </React.Fragment>
+        </div>
     )
 }
 
