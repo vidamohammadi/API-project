@@ -8,7 +8,8 @@ import FullPost from '../../components/FullPost/FullPost'
 class Blog extends Component {
 
     state = {
-        posts: []
+        posts: [],
+        selectPostId : null
     }
 
     componentDidMount() {
@@ -23,20 +24,25 @@ class Blog extends Component {
             this.setState({ posts: updatedPosts })
         })
     }
-    
+
+    selectPostHandler = (id) => {
+            this.setState({selectPostId : id })
+    }
+
     render() {
         const post = this.state.posts.map((post) => {
             return (
-                <Post key={post.id} title={post.title} author={post.author}/>
+                <Post key={post.id} title={post.title} author={post.author} click={() => this.selectPostHandler(post.id)} />
             )
         })
+
         return (
             <div>
                 <div className="center" style={{ flexFlow: "wrap" }}>
                     {post}
                 </div>
                 <div className="center">
-                    <FullPost />
+                    <FullPost id={this.state.selectPostId} title="titleee" content="contentt"/>
                 </div>
                 <div className="center">
                     <NewPost />

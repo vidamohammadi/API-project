@@ -2,7 +2,7 @@ import React from 'react'
 import './Post.css'
 const Post = (props) => {
     return (
-        <article className="post">
+        <article className="post" onClick={props.click}>
             <h2>{props.title}</h2>
             <div>
                 <div className="author">{props.author}</div>
