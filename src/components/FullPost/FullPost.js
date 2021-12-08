@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './FullPost.css'
 import Button from '../UI/Button/Button'
-import axios from 'axios'
+import axios from '../../axios'
 
 class FullPost extends Component {
     state={

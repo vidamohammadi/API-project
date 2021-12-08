@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './Blog.css'
-import axios from 'axios'
+import axios from '../../axios'
 import Post from '../../components/Post/Post'
 import NewPost from '../../components/NewPost/NewPost'
 import FullPost from '../../components/FullPost/FullPost'
