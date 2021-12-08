@@ -9,11 +9,12 @@ class Blog extends Component {
 
     state = {
         posts: [],
-        selectPostId : null
+        selectPostId : null,
+        error : false
     }
 
     componentDidMount() {
-        axios.get('https://jsonplaceholder.typicode.com/posts').then((response) => {
+        axios.get('https://jsonplamceholder.typicode.com/posts').then((response) => {
             const posts = response.data.slice(0, 8)
             const updatedPosts = posts.map((post) => {
                 return {
@@ -23,6 +24,11 @@ class Blog extends Component {
             })
             this.setState({ posts: updatedPosts })
         })
+        .catch((err) => {
+            this.setState({
+                error: true
+            })
+        })
     }
 
     selectedPost = (id) => {
@@ -30,11 +36,14 @@ class Blog extends Component {
     }
 
     render() {
-        const post = this.state.posts.map((post) => {
-            return (
-                <Post key={post.id} title={post.title} author={post.author} click={() => this.selectedPost(post.id)} />
-            )
-        })
+        let post = <p>Fetching data failed!</p>
+        if(!this.state.error){
+            post = this.state.posts.map((post) => {
+                return (
+                    <Post key={post.id} title={post.title} author={post.author} click={() => this.selectedPost(post.id)} />
+                )
+            })
+        }
 
         return (
             <div>
