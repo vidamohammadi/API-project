@@ -1,5 +1,4 @@
-import { Component } from 'react';
-import './App.css';
+import React , { Component } from 'react';
 import Blog from './containers/Blog/Blog';
 
 class App extends Component {

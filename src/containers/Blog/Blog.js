@@ -19,7 +19,7 @@ class Blog extends Component {
             const updatedPosts = posts.map((post) => {
                 return {
                     ...post,
-                    author: '\"vida\"'
+                    author: '"vida"'
                 }
             })
             this.setState({ posts: updatedPosts })
