@@ -18,6 +18,7 @@ class FullPost extends Component {
     deletePostHandler = () =>{
         axios.delete(`/posts/${this.props.id}`).then((response) => {
             console.log(response)
+            alert('this post deleted and you can check how it work in consol.')
         })
     }
     render() {

@@ -20,6 +20,7 @@ const NewPost = () => {
         }
         axios.post('/posts', data).then((response) => {
             console.log(response)
+            alert('this post added and you can check how it work in consol.')
         })
     }
 
