@@ -25,14 +25,14 @@ class Blog extends Component {
         })
     }
 
-    selectPostHandler = (id) => {
-            this.setState({selectPostId : id })
+    selectedPost = (id) => {
+        this.setState({selectPostId : id })
     }
 
     render() {
         const post = this.state.posts.map((post) => {
             return (
-                <Post key={post.id} title={post.title} author={post.author} click={() => this.selectPostHandler(post.id)} />
+                <Post key={post.id} title={post.title} author={post.author} click={() => this.selectedPost(post.id)} />
             )
         })
 
@@ -42,7 +42,7 @@ class Blog extends Component {
                     {post}
                 </div>
                 <div className="center">
-                    <FullPost id={this.state.selectPostId} title="titleee" content="contentt"/>
+                    <FullPost id = {this.state.selectPostId} />
                 </div>
                 <div className="center">
                     <NewPost />
