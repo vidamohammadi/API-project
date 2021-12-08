@@ -18,7 +18,7 @@ const NewPost = () => {
             body : post.content,
             auther : post.auther
         }
-        axios.post('https://jsonplaceholder.typicode.com/posts', data).then((response) => {
+        axios.post('/posts', data).then((response) => {
             console.log(response)
         })
     }
