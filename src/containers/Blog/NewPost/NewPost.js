@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
-import axios from '../../axios'
+import axios from '../../../axios'
 import './NewPost.css'
-import Button from '../UI/Button/Button'
-import Input from '../UI/Input/Input'
+import Button from '../../../components/UI/Button/Button'
+import Input from '../../../components/UI/Input/Input'
+import { Redirect } from 'react-router-dom'
 
 const NewPost = () => {
     const[post, setPost] = useState({
         id : '',
         title : '',
         content : '',
-        auther : ''
+        auther : '',
+        submitted: false
     })
 
     const postDataHandler = () =>{
@@ -21,11 +23,20 @@ const NewPost = () => {
         axios.post('/posts', data).then((response) => {
             console.log(response)
             alert('this post added and you can check how it work in consol.')
+            setPost({submitted : true})
+            console.log(post.submitted)
         })
+    }
+
+    let redirect = null
+
+    if(post.submitted){
+        redirect = <Redirect to="/" />
     }
 
     return (
         <div className="newPost">
+            {redirect}
                 <h1>Add a Post</h1>
                 <label>Title</label>
                 <Input name="input" value={post.title} onChange={(event) => setPost({title: event.target.value})}/>

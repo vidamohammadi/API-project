@@ -1,28 +1,28 @@
 import React, { Component } from 'react'
-import Button from '../UI/Button/Button'
-import axios from '../../axios'
-
+import Button from '../../../components/UI/Button/Button'
+import axios from '../../../axios'
+import './FullPost.css'
 class FullPost extends Component {
     state={
         loadedPost : null
     }
-    componentDidUpdate(){
-        if(this.props.id){
-            if(!this.state.loadedPost || (this.state.loadedPost && this.state.loadedPost.id !== this.props.id ))
-            axios.get(`/posts/${this.props.id}`).then((response) => {
+    componentDidMount(){
+        if(this.props.match.params.id){
+            if(!this.state.loadedPost || (this.state.loadedPost && this.state.loadedPost.id !== this.props.match.params.id ))
+            axios.get(`/posts/${this.props.match.params.id}`).then((response) => {
                 this.setState({loadedPost : response.data})
             })
         }
     }
     deletePostHandler = () =>{
-        axios.delete(`/posts/${this.props.id}`).then((response) => {
+        axios.delete(`/posts/${this.props.match.params.id}`).then((response) => {
             console.log(response)
             alert('this post deleted and you can check how it work in consol.')
         })
     }
     render() {
         let post = <p>Please select a Post !</p>
-        if (this.props.id) {
+        if (this.props.match.params.id) {
             post = <p>Loading...</p>
         }
         if(this.state.loadedPost){
